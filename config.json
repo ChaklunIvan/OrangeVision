@@ -1,0 +1,16 @@
+{
+    "model": "yolov8n.pt",
+    "confidence": 0.5,
+    "classes": ["person", "car", "bicycle", "dog", "cat"],
+    "camera": {
+        "width": 640,
+        "height": 480,
+        "fps": 30
+    },
+    "orangepi_optimizations": {
+        "width": 416,
+        "height": 416,
+        "fps": 15,
+        "buffer_size": 1
+    }
+}

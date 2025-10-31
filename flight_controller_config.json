@@ -1,0 +1,44 @@
+{
+    "video_sources": [
+        {
+            "name": "MAVLink UDP Stream",
+            "url": "udp://0.0.0.0:5600",
+            "description": "Common MAVLink video stream port"
+        },
+        {
+            "name": "PX4 Video Stream",
+            "url": "udp://127.0.0.1:5600",
+            "description": "PX4 localhost video stream"
+        },
+        {
+            "name": "ArduPilot Stream",
+            "url": "udp://0.0.0.0:14550",
+            "description": "ArduPilot MAVLink video port"
+        },
+        {
+            "name": "IP Camera RTSP",
+            "url": "rtsp://192.168.1.100:554/stream",
+            "description": "Network IP camera stream"
+        }
+    ],
+    "detection_settings": {
+        "model": "yolov8n.pt",
+        "confidence": 0.6,
+        "classes": ["person", "car", "bicycle", "airplane", "bird"],
+        "flight_optimized": true
+    },
+    "flight_controller_types": {
+        "pixhawk": {
+            "default_ports": [5600, 14550],
+            "stream_format": "h264_udp"
+        },
+        "ardupilot": {
+            "default_ports": [14550, 14551],
+            "stream_format": "mjpeg_udp"
+        },
+        "px4": {
+            "default_ports": [5600, 14556],
+            "stream_format": "h264_udp"
+        }
+    }
+}
