@@ -10,7 +10,7 @@ import queue
 
 
 class MAVLinkDetector:
-    def __init__(self, connection_string: str = '/dev/ttyUSB0', baudrate: int = 57600):
+    def __init__(self, connection_string: str = '/dev/ttyS5', baudrate: int = 115200):
         """
         Initialize MAVLink detector with UART connection to flight controller
         
@@ -143,8 +143,8 @@ def main():
     parser.add_argument("--confidence", type=float, default=0.5, help="Confidence threshold")
     parser.add_argument("--classes", nargs="+", help="Classes to detect")
     parser.add_argument("--config", default="config.json", help="Config file")
-    parser.add_argument("--mavlink", default="/dev/ttyUSB0", help="MAVLink connection string")
-    parser.add_argument("--baudrate", type=int, default=57600, help="MAVLink baudrate")
+    parser.add_argument("--mavlink", default="/dev/ttyS5", help="MAVLink connection string")
+    parser.add_argument("--baudrate", type=int, default=115200, help="MAVLink baudrate")
     parser.add_argument("--width", type=int, default=640, help="Camera width")
     parser.add_argument("--height", type=int, default=480, help="Camera height")
     
