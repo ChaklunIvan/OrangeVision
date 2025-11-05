@@ -235,7 +235,7 @@ def main():
                        cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
             
             # Show frame (comment out for headless operation)
-            cv2.imshow("MAVLink Object Detection", frame)
+            #cv2.imshow("MAVLink Object Detection", frame)
             
             key = cv2.waitKey(1) & 0xFF
             if key == ord('q'):
