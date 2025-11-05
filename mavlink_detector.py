@@ -31,9 +31,7 @@ class MAVLinkDetector:
         """Connect to flight controller via MAVLink"""
         try:
             print(f"Connecting to flight controller: {self.connection_string}:{self.baudrate}")
-            self.mavlink_connection = mavutil.mavlink_connection(
-                f'{self.connection_string}:{self.baudrate}'
-            )
+            self.mavlink_connection = mavutil.mavlink_connection('/dev/ttyS5', baud=115200)
             
             # Wait for heartbeat
             print("Waiting for heartbeat...")
