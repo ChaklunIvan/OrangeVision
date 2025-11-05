@@ -60,7 +60,7 @@ class MAVLinkDetector:
             )
             
             # Also send confidence as named value for telemetry
-            timestamp = int(time.time() * 1000)
+            timestamp = int(time.time() * 1000000) % 4294967295
             param_name = f"OBJ_{object_class[:6].upper()}".encode()[:10]  # Max 10 chars
             
             self.mavlink_connection.mav.named_value_float_send(
